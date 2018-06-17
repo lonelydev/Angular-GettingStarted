@@ -41,7 +41,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let product of products'>
+          <tr *ngFor='let product of filteredProducts'>
             <td>
               <img [src]='product.imageUrl'
               [title]='product.productName'
@@ -49,8 +49,8 @@
               [style.margin.px]='imageMargin'
               *ngIf='displayImage'/>
             </td>
-            <td>{{product.productName}}</td>
-            <td>{{product.productCode | lowercase }}</td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode | uppercase | convertToSpaces: '-' }}</td>
             <td>{{ product.releaseDate}}</td>
             <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
             <td>{{ product.starRating}}</td>
