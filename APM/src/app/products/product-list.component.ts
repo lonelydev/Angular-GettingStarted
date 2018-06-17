@@ -3,7 +3,6 @@ import { IProduct } from './product';
 import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'pm-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
@@ -14,7 +13,7 @@ export class ProductListComponent implements OnInit {
   displayImage: boolean = false;
 
   _listFilter: string;
-  get listFilter(): string{
+  get listFilter(): string {
     return this._listFilter;
   }
   set listFilter(value: string){
