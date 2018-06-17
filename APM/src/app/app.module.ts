@@ -1,3 +1,4 @@
+import { ProductService } from './services/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,13 @@ import { StarComponent } from './shared/star.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  /**
+   * Code that can create or return a service
+   * Typically the service clas itself
+   * Must be injectable
+   * Available from where it is declared to all its children
+   */
+  providers: [ ProductService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
