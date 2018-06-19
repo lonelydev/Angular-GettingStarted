@@ -8,7 +8,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate component|directive|pipe|service|class|module|interface`. For those who prefer to type less, you can achieve the same effect by typing `ng g c|d|p|s|cl|m|i`. For more details on the different options available for generation use `ng g --help`.
+
+Some example shortcuts to get things going:
+  * `ng g s products/awesome.service` - generates a service in the specified path in a file named awesome.service.ts. 
+  * In order to generate a service and also register it with a module you would have to type `ng g s products/awesome.service -m app.module` where `app.module` is the name of the module in which you want this service registered. 
 
 ## Build
 
@@ -25,4 +29,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Angular CLI is very powerful and supports a variety of different commands. To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
