@@ -2,9 +2,57 @@
   <div class='panel-heading'>
     {{ pageTitle + ':' + product.productName }}
   </div>
-  <div class='panel-footer'>
-    <a class='btn btn-default' (click)='onBack()' style='width:80px'>
-      <i class='glyphicon glyphicon-chevron-left'></i>Back
-    </a>
+  <div class='panel-body'>
+    <div class='row'>
+      <div class='col-md-6'>
+        <img [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'
+        />
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        Name:
+      </div>
+      <div class='col-md-4'>
+        {{ product.productName }}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        Product Code:
+      </div>
+      <div class='col-md-4'>
+        {{ product.productCode | uppercase | convertToSpaces: '-' }}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        Release Date:
+      </div>
+      <div class='col-md-4'>
+        {{ product.releaseDate }}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        Price:
+      </div>
+      <div class='col-md-4'>
+        {{ product.price | currency:'USD':true:'1.2-2' }}
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-2'>
+        Price:
+      </div>
+      <div class='col-md-4'>
+        <pm-star [rating]='product.starRating'></pm-star>
+      </div>
+    </div>
   </div>
+</div>
+<div class='panel-footer'>
+  <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+    <i class='glyphicon glyphicon-chevron-left'></i>Back
+  </a>
 </div>
