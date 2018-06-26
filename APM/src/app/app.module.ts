@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WelcomeComponent } from './home/welcome.component';
-import { RouterModule } from '@angular/router';
 import { ProductModule } from './products/product.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { WelcomeComponent } from './home/welcome.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +14,12 @@ import { ProductModule } from './products/product.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent },
-      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
-    ]),
-    ProductModule
+    ProductModule,
+    /** The order of imports is crucial.
+     * The wild card routes should be registered after all the other routes.
+     * Thus approutingmodule should be registered last.
+     */
+    AppRoutingModule
   ],
   /**
    * Code that can create or return a service
